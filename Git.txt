@@ -1,0 +1,778 @@
+
+
+git-----------> git hub is an VCS platform for software developers
+------
+user :Swaroop17y
+Yalapalli@123
+
+
+
+GIT adding, committing, pushing
+
+
+(Untracked file)     (Tracked files)
+working area       staging area     localrepository     (3 logical areas means-- we not able to se physically)
+------------       ------------      ---------------
+|   git add   (gitstatus)       git commit
+|
+What is working area?(git add)
+->create 1 file --->db.utils.pthon
+what ever the files which r ongoing development files which we r going to the available in the working area
+what r the files which we r going to modify those file r going to avilable in the working area
+
+Q) how to know weather my file is in working area, staging area are local repo --->just u can exicute --Git status (command)
+
+->it is showing Untracked file(RED Colour-->dbutils.python)
+
+->how to move working area to staging area ----->git add .  or
+                                                 git add *
+is is possible to commit 
+in working area 10 files r  there . i have completed only 2 files is it possible to add -yes (git add filename 1, filename 2
+->if u want to move only java or python or nodejs-->(git add *.java, git add *.python, git add *.nodejs)
+
+
+how to go back staging area to working area?
+
+Staging Area(git status)
+------------
+staging area is a intermediate b/n area from working area to local repo
+what ever the  development completed those file r keep in that staging area
+what ever the files which r available in usually what ever files which r going to keep in staging area these files r development is completed
+-----------------------------
+*-->before exicuting "git commit" command we have to configure user name, email id.....very 1st time using git bash commiting the code u have to configure
+git config --global user.name "swaroop"
+git config --global user.email "gnanaswaroop@gmail.com"
+i want to check configure these details r ("git config --global --list")
+
+Local repository(git commit -m "Committed")
+----------------
+what ever the files which r ready for pushing that remote repo we r going to keep into local repo
+is it possible to commite only1 file -yes--u can specify file name (git commit -m "committed" dbutils.python) 
+
+                                  (alies name)
+                                     |
+remote repository (git remote add stride https://github.com/stride-practice/future.git)
+-----------------
+it is going to map remote repository  url with ur local repository
+
+after add url link ----exicute "git remote -v"
+fetch - fetching from local repo to remote repo
+
+*--push the code from local repo to remote repo( git push stride master)
+
+--> github credentials windows(Microsoft credentials manager)
+
+PAT - persnol access token
+in github, open profile, settings, 
+
+***token(" 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 ")
+password:- is PAT link token (copy rightclick paste) when we pasting the PAT it is not visible
+
+git init ----->git local repo
+git add <file name>
+git commit -m "first commit"
+git branch -M main
+git remote add origin https://github.com/Swaroop17y/string.git
+git push -u origin main 
+
+
+source code management tools
+----------------------------
+git hub
+gitlab
+bitbucket
+SVN --> sub version
+CVS -->  concurrent version system
+TFS --> Team foundation server(Microsoft server)
+
+create an orgni
+create an repository
+create an team -----------https://github.com/orgs/stride-practice/teams/futures(Team url)
+add users to the team
+provide the repo acces to the team
+
+is it installing application if u share the link to dev team to share the source code the person can acces the url 
+outside of the office network & download the source code - login vpm acces it(without login VPN it cant acces)
+
+after org 
+top box url link copy
+https://github.com/orgs/stride-practice/repositories
+public :- anybody can able to se that ur repo. & what are source code is there know....that source code can able to se
+private :- they r not able to see
+
+
+can u explain git flow
+----------------------
+git init
+git status
+git add .
+git commit
+git remote add
+
+git push
+
+if u have a create git empty local repo..1st i use  "git init" command after that developed some files once u devloped a files
+create a file wich is going to available in the working area we need check that weather working area r staging area for that we use that  "git status" command after exicuting  "git status" command  it gives that files r in which area working area or staging area or local repo so i have developed some files it is by default is going to available in the  working area then i exicuted that "git add" command it move to the staging area then using this "git commit" command i have commited the files from staging area to the local repo then using the "git remote add" i have mapped that remote repo  where its the local repo then i  using the "git push" command i pushed that local repo changes to the remote repository   
+
+
+Git & github both r different
+* git
+------
+git is a  distributed version control system which can be used to developed the code & maintaining versioning( versioning means each commit it is going to maintain 1  version number)
+
+gitHub
+------
+guthub is a  hosting service , which can be used to manage the source code it will provides the GUI(graphical user interface)
+
+
+git + svn = no
+using the git u can work with the github, gitlab, bitbucket, azure a repos
+svn clint + svn --> yes
+use that svn server for the we r going to use the SVN Clint
+git + github - yes
+git + gitlab - yes
+git + bitbucket - yes
+git + azure repos - yes
+
+
+
+git is a DVCS - each resourse have own local repo
+SVN/CVS/TFS--> VCS
+
+***
+what is the role of devops engineer ?
+as a devops engineer we r going to take that code we r going to automate the deployment process
+developer is going to develop the code know  whay we need to learn all commands ?
+as a devops engineer also we r going to develop some shell scripts , playbooks in ansible, amel files in the docker , k8s.
+
+here push is like checkin...yes
+svn checkin == git push
+if u want get the code remote repo to laptop...yes
+svn checkout == git pull/git fetch
+
+all the svn commands r going to start with svn command
+all the git commands r going to start with git commands
+
+
+*git log command what is the information will display ?
+it is going to display that 
+committ id
+author name
+email id 
+date &
+commite msg
+
+ i want to know that how many files r commited ?
+git show (commit id)
+git show 
+
+git show command by default it going to display that full mesg ...if i dont want.... i want only the file name --for that one
+we r going to use that some options
+
+git show --pretty="" --name-only d33bc2c1d
+
+if u want ro remove file____& u can choose  displayed (git clean -n)
+its displays the files & we can use command (git clean -f)
+
+
+* if u get back the staging area to working area ---use command ---> git reset --> git reset
+                                                                                  ( untracked files)
+* if u want to only one file get back --> git reset <file name>
+
+one text file create & update & ucan use command --> git commit -a -m "updated"
+
+i have commited the 100 of files how i can delete --> 1st identify in which commit id --> use "git log" command
+
+***git revert command can be use the delete that files whatever u have commited in the particular commit id from our local repo
+
+& use command "git revert id"( 9c67d45) -->after exicuting this one in particular commit id what ever the new files or added new files or committed those files r delete from the local repo
+* what ever the updated files it is going to delete it
+but i want to clean the remote repo also ..we r going to push that local repo chages to the remote repo....
+after use command ...its not displaying in gitlab
+"git push origin main -f"  ----> the file deleted in the git lab 
+
+
+one of ur collegue he developed some code he commited ..he pushed that bad commit code..how ur going to recover
+ans) use that "git revert" command & specify the commit id
+recent commit id we can do it --> yes
+do that perivios commite ids --> not possible
+updated file is not delete---> only code is deleted--> yes
+
+
+*git is a DVCS
+
+Why we need to call as a version control system ?
+a)each commit it is going to maintain a one commit id
+
+
+once we create a repository it is going to create a (master or main)
+but developers r not going to work directly on master branch
+what we r going to do ?
+we r going to create a development branch
+
+minimum 3 environments we r going to maintain if u want to develop the project
+we r going to create 3 env
+1) dev env
+2) QA
+3) prod
+
+*who is going to use this Dev environment --> developers r going to use this
+* from the development branch we r going to deploy code to the dev environment
+
+git branch ---> it is going to display that what ever the brances r there in ur local repository it is going to display
+if u want to create branch ---> git branch development 
+& use command "git branch" it will display development, *master
+development
+*master ==> green colour
+it means currently we r in the master branch
+git branch -d branchname  --> delete branch
+
+using this "git branch" command we can display the brances in local repo, we can create the branch , we can delete the brances , we r renaming also 
+use comand ==> git branch -d branch name
+for creating , displaying, deleting, renaming for all this operations we r going to use the "git branch" only
+
+***
+now i have created a brach(development branch) i want to switch from master brach to development branch -->what to do
+ans)going to use that  git branch -m (new branch name)
+
+now  i have created that development branch -->i will switch to that development branch & i m  going to rename it ==> git branch -m mast
+its change to mast branch
+
+* currently i m in master branch i want to rename it this development branch --> it is possible --> yes
+use command
+if u r in other branch & if u want to update to that anothor branch we have to specify that old branch & new branch name.
+git branch -m <oldname> <newname>
+if u already in the branch use comand --> git branch -m <newname>
+
+i want to switch that development branch
+how we can switch from one branch to another branch  --> we r going to use that "git checkout branchname"
+"git checkout development"
+now use git branch --> it is pointing to the development branch
+
+
+we have updated a file vi dbutils.java in the development branch---we should not suppose to switch to that other branch before commiting the code in current branch
+currently we r in development branch
+without commiting the code in development branch we should not suppose switch to the master branch or any other branch
+so switch to other branch ..there also we will see that updated file
+before switching to any branch we should commit that what r the code developed which we have developed in current branch
+
+it is in staging area
+git commit -a -m "udated"
+
+
+we have developed some code
+assume we have deploy in dev environment so that code is working point
+now we need deploy into that production environment  so if u want deploy code to the production environment usally we r going to take the code from master branch
+so updated not there in master branch---> it is there in the  development branch
+
+
+how we can intigrate one branch port to another branch
+we have intigrate development branch port to the master branch
+we r going to use the command "git merg"
+master branch > git merg development
+exicute this command we will se that what ever updates there in the development branch  it will be available in the in the development branch whatever it is there it is going to intigrate the master branch
+
+can u check what r the diffrences from development to master --> yes -->use command  "git diff development"	
+
+master > git merge development
+master > git diff development 
+master > git diff  development --> i am in master branch & i want se the diff b/n stage & development
+                                 without switching to stage branch i need to check the diff ---that time we have to check that  git diff stage <branch name>
+
+we have to intigrating one branch to another branch we r going to use that git merg <branch name>
+
+
+**developers  r not going use the vi editors & all
+**they r going to use IDE
+IDE (intigrated development environment)
+many ids is there
+so popular ids for java ---> eclipse,intellij
+nodejs,angular ----> visual studio code
+python -----> PyCharm
+.net -----> visual studio
+
+
+git commit -a -m "merge conflipt"
+
+
+git checkout -b stage ---> it is going to create that stage branch & it is going to  switch to the stage branch
+
+
+u have 100 of brances in local repositories 
+how to push all the brances in one shor use command ----> git push alise name --all(git push origin --all)
+
+git branch  --> it going to display local repository brances
+git branch -r  --> it is going to display the remote repository brances
+git branch -a --> it is going to display that all the brances
+
+
+is there any way we can create the brances  directly in the remote repository --> yes
+
+
+we have created the branch directly in the remote repository is it going to get reflect in our local repository --> git branch -a ==> it is not going to..untill unless if u take that updated code from remote repository
+
+i going to delete the branch ?
+git branch -d stage(" stage " cannot delete  beacuse currently we r in stage branch)
+--> now u can delete that development branch use command --> "git branch -d development" --> git branch --it is shows delete in this command
+delete the remote repo branch from the commnads --> yes -- how ==> "git push alise name :development" -->git push origin :development
+
+can u delete that QA branch -- yes  ==> git push :uat  --> yes it is deleted
+do u have pass that QA branch -- git push fb :qa -->do u have give a branch --> NO 
+can u delete that master branch --> no --> currently the default branch is master branch
+
+
+
+
+
+
+git tag
+----------
+
+what is the df b/n branch & tags
+
+branch                               tags
+------                               ----
+
+1)branch is mutable                   1)Tag is immutable (once we create it not able to modify  that one
+  (we can able to modify)
+2)On going development                2)after production deployment
+
+when ur going to create the brances  --> brances r going to create On going development
+when we r going to create tags       --> after production deployment(once we r delopy the code to the production we r going to create a tag)
+
+*intrv
+------
+1)tags r going to create an which branch ?
+A) master branch -->when we r going to create a tag after production deployment
+
+to deploy the code into the production environment from which brach we r going to take the code -->we r going to take from Master branch
+
+2)if u exicute git push alise name --all is it going push that brances & tags both or only the brances ?
+A) only brances
+
+how to display that how many brances r there -->git branch
+if u want to create branch                   -->git branch branch name
+if u want to push particular branch          -->git push origin main
+if u want to push all the brances            -->git push origi --all
+
+
+git branch                               git tag
+git branch branchname                    git tag tagname
+git push origin main                     git push origin tag tagname
+git push origin --all                    git push origin --tags
+git branch -d branchname                 git tag -d tagname
+
+git tag
+git tag facebook1.0.0
+(1.0.0) -->reprasent 1st numb - major
+                     2nd numb - minor
+                     3rd numb - patch or update
+
+git tag
+git push origin tag <tagname>
+git push origin tag facebook1.0.0
+
+
+*intr
+------
+what is the command to create a git command  the arcive files - git tags
+he didn't ask like this one 
+what is the command for creating the tags --> git tag command
+
+
+
+
+
+if u want to delete a git branch we r going to use that --> git branch -d branchname
+if u want to delete a git tag we r going to use that    --> git tag -d tagname
+git tag -d skype1.0.0 --> it is deleted in local repository
+we have deleted that branch in that remote repository --yes or no --> how
+open repository click brances it display u 
+
+
+
+git stash
+-----------
+repo
+
+development
+
+master
+
+
+so as a git best practices u should not suppose to commit hlaf done work
+we r in b/n developement we didnt completed but for completing it may take two more days but i cant wait to fix that production isse
+two days i dont want wait know immediatly to fix that 
+how we r going to switch (should not suppose to commit beacause it not completed it is half done work)
+now what to do---> very simple==> so for lost commit to now whatever we developed i need to take the backup for that one
+we r going to exicute that --> "git stash" command
+**if u going to exicute git stash comamnd what will happen ?
+it is going to take that backup of whatever it is there in working area & it is going to create one temporary location
+
+i want to know that how many backup sets r there 
+use command "git stash list"  ------>it will be display that
+ stash@{0}
+ stash@{1}
+ stash@{2}
+
+now i need to resume my development work so that one
+i need to take that whatever that backup is there & i want to applay to that development branch 
+what we do ?
+"git stash apply"
+
+if i exicute that git stash apply here 3 backup stash r there know which one i going to apply....--> only recent one or latest one
+git stash apply stash@{1}  ------applying
+
+after applying i want to delete it
+if i dont delete it as a result ur repository size will going to increase 
+so how to delete it ?
+use command "git stash drop"
+so u if exicute this command know it is going to delete which one --3 backup sets r there---> again it will be latest one delete
+
+if u want to delete that spicific one ..yes we can
+git stash drop stash{1} or {2} 0r {3}    ------>deleting
+
+git stash pop means it is going to apply & it is going to delete also
+which one is going to apply --->the latest one 
+if u want apply & delete specific version use command --> git stash pop stash@{1}
+
+git stash  -->nothing is there
+git stash save "dev branch login" --> it will display the comment
+git stash list --> comment will added & displayed
+git status --> working tree clean
+
+so now assume i switch to the other branch i have completed that my work now agin i came back to this development branch
+now i want resume or continue work on the development branch
+in that case what we have to do..  we need to apply ....whatever this backup is there for that one we going to use command
+"git stash apply"  --> right now only 1 backup set is there that one it is going to take 
+git status --> updated content
+
+now assume we have  development is completed ...now we have to commit it ...git commit -a -m "updated" --> it commited code into local repos
+git stash list
+now i want to delete it --> "git stash drop"
+git stash list ==> no comment
+git stash command --> whatever code which is there in working area that only we can take 
+
+
+
+git cherry-pick
+---------------
+when we r going to use this cherry-pickcommand 
+how to use this command 
+every one teach how the command is going to work --> but that important thing is the use case in  which senario where we have to use ..that is very impo
+
+my requirement is
+i have 1
+
+repo
+
+development - BRANCH
+
+master - BRANCH
+
+DC1, DC2,DC3, DC4
+what ever code we hav committed in development branch so if u want to intigrate all these commits with master branch which command we r going to use
+"git merge" 
+
+My reqirement is from 1 branch some portion of code i want to intigrate into the other branch..is it possible
+"git cherry-pick" command
+
+****
+git log & take commit id, switch to other branch , to wich branch we want to apply & exicute that
+suppose i want to apply master branch
+git cherry-pick <commitid>
+
+commit id we took from --other branch development
+
+im change branch to development branch & exicute use command
+git cherry-pick  039807d7
+
+commit ID - 039807d7
+master > git cherry-pick 039807d7
+development > git cherry-pick 039807d7 
+
+deffination
+--------------
+==>using this git cherry pick command what evre the commit id ur specifing from that particular branch in this particular id  what ever u ahve complete that one  it is going to the other branch 
+==>using git cherry pick command so some portion of code from one branch we can take we can apply to that other branch 
+ 
+
+u dont have any remote repository
+ur going to strat developing  new project that time use command -->git init --> &going to develop the code  & ur going to push the remote repo 
+
+
+already code is there in the remote rempo .....if u want start working on that project so that time u can use command ----"git clone" command & download the code 
+once u download it is going to that create local repo & going to map that remote repo url also from where we took the downloaded
+
+
+already we download the code ....now i want to take only  updated code beacause other person working on same project ....that updated is not there
+so to get that updated code from remote to local repo we r going to use that "git fetch" or "git pull" command
+
+
+git fetch 
+git pull
+
+df b/n git pull & git fetch
+
+
+remote repo
+     |
+     |  ---> we need get the  updated code from remote to local repo
+     v
+local repo
+     |
+     |  ---> from local to i need to get into working area
+     v
+working repo
+
+
+
+"git fetch origin master" --> if i exicute what will happen ...just it is going to remote to local repo
+it not going to get into that working area 
+if u want get from local repo to working area ......again we use git "merg + branch name"
+
+
+git pull origin master ---> if i exicute what will happen
+it will get code from remote to local repo & local repo to working area also
+
+as a summery git pull = git fetch + git merg
+
+
+
+
+when we have to use the git fetch command
+
+
+HTTP Status Codes
+-----------------
+400
+401 --> unutorize
+
+403  --> forbidden
+404  --> not found
+
+server side issue
+------------------
+500
+501
+502
+503
+
+
+******
+in real time use below process in company laptop
+******
+
+SSH Keys
+---------
+
+SSH URL
+
+HTTPS Urls
+
+
+SSH URL
+--------
+
+I pushing the code from my local to remote repo right now i m using HTTP Url --> insted of im using SSH Url --> first u have to generate the ssh keys in ur laptop
+
+how to generate the ssh keys in ur laptop ?
+what is the command
+"ssh -keygen" 
+
+where we r going to exicute this command ==> open git bash --> windows & exicute this command ssh-keygen
+once we exicute this command it is going to generate  2files
+
+"id_rsa"     ----------> private key
+
+"id_rsa.pub" ----------> public key
+
+what is rsa ?
+it is an encription algoritham.
+rsa token device. it is going to generate randomly 1 number...that number they r going to use for accesing application ...it is an secured application.
+
+***
+rsa --> is an default  encription algorithamwhich is going to use for generating the ssh keys
+
+ssh-keygen -t dsa
+-t = type of algoritham
+
+if i exicute this command it is going to generate ---> 
+id_dsa
+id_dsa.pub
+it is going to generate that full keys
+whwre it is going to generate ---> it is going to generate in user home directory there we will see (~/.ssh)
+
+if any directory any files starts with . means it is a hidden file or hidden directory -->so there it is going to generate  that ssh keys
+where we r going to generate these ssh keys -->in ur laptop
+
+rsa -->defult encription algoritham
+so if u want to use that other than rsa u have to use that -t algoritham & specify that algoritham name 
+if u dont specify any algoritham name it is going to take that default algoritham rsa
+
+
+***
+i want to check wather in my laptop weather i have ssh keys already present r not for that one we can use that 
+ls -la ~/.ssh
+
+if u want to remove files display using ls-la ~/.ssh i
+ id_rsa
+id_rsa.pub
+if u want to remove 1st 2 files use command 
+rm -f ~/.ssh/id_*   ---> it not show 1st 2 files
+now use ls -ls ~/.ssh & see
+
+
+now im going to again generate use command "ssh-keygen"
+leave blank it is is store default dir: after enetr butt
+passpharse : 
+again passpharse :
+
+3times enter button after exicuting the keygen command 
+ls -la ~/.ssh
+it display the 2 files
+
+
+
+i want to se the  id_rsa.pub content "cat ~/.ssh/id_rsa.pub" & display & u can copy & store 
+*****
+ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDG2utFFYB9xVwknIOTQWwxns6P3IeI0k7B5AQQF1295vMmjLJnxAx2csTtmb7ihDn1B0WT1IzOvd5Khm/VPYV01377CpekNGGIwpw96XPZXUoBk9lZXDy/RkFNfcFwW/KItFwjJcYgbcoQPTNFAobRBg6gNwoNO7Yi0UoWXBuV3Wjof37jiSpJYx5dqlEFMUj/SP4bd3CTnmWswLTONdJZbuAuFZaA3NRbbySHttqzrx8/Jg0uoE/dWnDeRuS6Nqs2+MxqQzr6ElzTeu/MWwcOIiwVTr9fVYNbaOZStpQrfqZ5Uwvq/iOxGAvkcxov8AnMSS/W16/vVjo74lXpzwm0PCFes1R42qrc1PEKzZH6DRXA6jeu6zANs6EoN7Ia43Hv9yWXMAA5YkqO/HoYdINjklHrfd4MCxej0E4UVLMNMG9tbLW0yb1Rn+Q4sxoah22shZr4vwmrRSF7w62auzkxdxbOzQiA8XlKkgy9m9UlZlbcRjfzF/0H4Xolyp3pFAk= azuread\yalapalliswaroop@DESKTOP-GOQ9IV5
+****
+
+git hub serve --> profile --> settings --> ssh & GPG Keys -->open --> already 1 SSH key there --> delete it --> click new SSH Key --> title -- "sampleSSHKey" --> open keys --> & paste it --> Click Add SSH Key
+
+* what r the confirations which we did we need to test it configurations r correct r not for that one what we have to do use command 
+ssh -T git@github.com
+
+we have generated at PAT -->PAT  Generate where in ur github account 
+SSH Keys r going to generate in ur laptop
+
+
+PAT -- Process
+---------------
+github --> settings --> developer settings --> persnol access token  --> generate new token -->
+
+
+GitHub is providing API --> Application programming interface
+what is the use of api ?
+to any administration activities , currently we r logged in intlo github server throug GUI, creating the organisation, team,repository, adding users the team all these things going throug GUI 
+
+
+HTTP Method
+-----------
+get      -> get the information from the server
+delete   -> delete some information resource from the server
+put      -> to update information to 
+the server
+post     -> to create some information in the server
+
+
+
+as a developer develop the code & he is going to push the code to the development branch
+once development is over
+ all the developers are going to push the code to the development branch 
+from development branch we r going to take the code & we going to dev environment
+we need to update that code to remote repo master branch
+
+how u can intigrate one branch code to the other branch in remote repo ?
+
+once as a developer he develop the code & once he pushed to that remote repo development branch he is going to develop a Pull request 
+developer create PR
+once developer will create a PR as a senior developer or technical lead 
+they r going to review the code & they r going to intigrate to the target branch (weater it be a master branch or stage branch)
+it will display that all the details ( in stage branch what r the updates is there those line )
+
+when w r going get pull request ?
+if u want to intigrate one branch code to other branch in remote repo we r going to create  the pull request 
+how to create a pull request ?
+go to git branch ---- create pull request open ----slect from which branch to which brach u want intigrate select that one(stage brach to master branch 
+
+https://github.com/y-swaroop/Mphasis/pull/2
+
+
+
+Fork
+----
+
+
+
+Brancing Straegy
+----------------
+
+
+df b/n gir rebase & git merge
+
+
+readme file
+-----------
+
+
+best practices
+--------------
+
+
+
+git commit -m " "
+
+how to change git commit msg ?
+yes it possible
+A) git commit --amend "updated commit msg"
+
+when we use --amend command ?
+by mistake u have wrong commit message
+ 
+
+what is the as a devops role in git & github ?
+
+as a devops engineer some scripts
+as a devops engineer some amel files
+as a devops engineer we r develop that playbook if ur using ansible.
+to maintain version for those files to share with ur colegues
+
+
+
+
+
+
+
+
+
+
+
+
+MY Self YALAPALLI SWAROOP. I Recently Joined Stridefuture Technologies as a Devops Engineer. I feel great about
+being a part of this organization and i like good working Environment and My team helped me to understand the work and also feel great about being a part of this organization due to the working environment and the nature of my work. 
+Hobbies :- Badminton, listening Music
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
